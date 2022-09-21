@@ -11,15 +11,15 @@ public class WebDriverFactory {
     private WebDriver driver;
     Configuration cfg = ConfigFactory.create(Configuration.class);
     private WebDriver createChromeDriver(Configuration cfg) {
-        WebDriver driver = new ChromeDriver();
-        ChromeDriverManager.chromedriver().browserVersion(cfg.seleniumVersion()).setup();
+        WebDriver driver = WebDriverManager.chromedriver().create();
+        WebDriverManager.chromedriver().browserVersion(cfg.seleniumVersion()).setup();
 
         return driver;
     }
 
     private WebDriver createFirefoxDriver() {
-        WebDriver driver = new FirefoxDriver();
-        FirefoxDriverManager.firefoxdriver().setup();
+        WebDriver driver = WebDriverManager.firefoxdriver().create();
+        WebDriverManager.firefoxdriver().setup();
 
         return driver;
     }
