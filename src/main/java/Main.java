@@ -4,7 +4,7 @@ import org.aeonbits.owner.ConfigFactory;
 
 public class Main {
     public static void main(String args[]) {
-        System.setProperty("webdriver.chrome.driver","/Applications/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Applications/chromedriver");
         Configuration cfg = ConfigFactory.create(Configuration.class);
 
         System.out.println(cfg.browserName());
