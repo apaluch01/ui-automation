@@ -18,7 +18,11 @@ public interface HomePage extends ExtendedWebPage {
     @FindBy("//*[@id=\"main-header\"]/div/div[1]/ul/li[2]/a")
     ExtendedMyWebElement searchButton();
 
-    @Description("Cart button")
+    @Description("Header cart button")
     @FindBy("//*[@id=\"ember4\"]")
     ExtendedMyWebElement cartButton();
+
+    @Description("Header account button")
+    @FindBy("//*[@id=\"main-header\"]/div/div[1]/ul/li[3]/a")
+    ExtendedMyWebElement accountButton();
 }
