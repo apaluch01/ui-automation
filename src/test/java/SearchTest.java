@@ -1,21 +1,8 @@
 import org.junit.Test;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+
 import steps.OpenPageSteps;
 
-public class SearchTest {
-    WebDriverFactory driver = new WebDriverFactory();
-
-    @BeforeEach
-    void initializeDriver() {
-        driver.initialize();
-    }
-
-    @AfterEach
-    void quitDriver() {
-        driver.end();
-    }
-
+public class SearchTest extends BaseTest {
     @Test
     public void productNumberShouldBeAsExpected() {
         new OpenPageSteps().openHomepage().acceptPrivacyModal().
