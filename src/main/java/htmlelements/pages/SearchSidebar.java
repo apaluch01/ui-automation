@@ -1,10 +1,11 @@
 package htmlelements.pages;
 
 import htmlelements.ExtendedMyWebElement;
+import htmlelements.ExtendedWebPage;
 import io.qameta.htmlelements.annotation.Description;
 import io.qameta.htmlelements.annotation.FindBy;
 
-public interface SearchSidebar {
+public interface SearchSidebar extends ExtendedWebPage {
     @Description("Search input")
     @FindBy("//*[@id=\"ember435-input\"]")
     ExtendedMyWebElement searchInput();
