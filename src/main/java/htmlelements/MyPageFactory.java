@@ -6,6 +6,12 @@ import io.qameta.htmlelements.statement.RetryStatement;
 import org.openqa.selenium.WebDriver;
 
 public class MyPageFactory {
+
+    private WebDriver driver;
+    public MyPageFactory(WebDriver driver) {
+        this.driver = driver;
+    }
+
     public <T extends WebPage> T on(Class<T> webpage) {
         WebPageFactory webPageFactory = new WebPageFactory();
         webPageFactory.property(RetryStatement.TIMEOUT_KEY, String.valueOf(30)); // TODO: Create timeout as configurable property
@@ -13,7 +19,7 @@ public class MyPageFactory {
     }
 
     public WebDriver getDriver() {
-        return null; //TODO: Here you need to pass WebDriver instance from configuration.WebDriverFactory.get();
+        return driver; //TODO: Here you need to pass WebDriver instance from configuration.WebDriverFactory.get();
     }
 
 }

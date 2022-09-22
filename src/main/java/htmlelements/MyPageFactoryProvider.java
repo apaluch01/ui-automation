@@ -1,6 +1,6 @@
 package htmlelements;
 
-import configuration.WebDriverFactory;
+import org.openqa.selenium.WebDriver;
 
 public class MyPageFactoryProvider {
 
@@ -8,9 +8,9 @@ public class MyPageFactoryProvider {
 
     private MyPageFactoryProvider() {}
 
-    public static MyPageFactory getInstance() {
+    public static MyPageFactory getInstance(WebDriver driver) {
         if(INSTANCE == null) {
-            INSTANCE = new MyPageFactory();
+            INSTANCE = new MyPageFactory(driver);
         }
         return INSTANCE;
     }

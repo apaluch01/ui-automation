@@ -1,6 +1,5 @@
 package configuration;
 
-import configuration.Configuration;
 import enums.Browser;
 import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 import io.github.bonigarcia.wdm.managers.FirefoxDriverManager;
@@ -13,38 +12,38 @@ public class WebDriverFactory {
     Configuration cfg = ConfigFactory.create(Configuration.class);
     private WebDriver createChromeDriver(Configuration cfg) {
         ChromeDriverManager.chromedriver().browserVersion(cfg.seleniumVersion()).setup();
-        driver = ChromeDriverManager.chromedriver().create();
+        this.driver = ChromeDriverManager.chromedriver().create();
 
-        return driver;
+        return this.driver;
     }
 
     private WebDriver createFirefoxDriver() {
         FirefoxDriverManager.firefoxdriver().setup();
-        driver = FirefoxDriverManager.firefoxdriver().create();
+        this.driver = FirefoxDriverManager.firefoxdriver().create();
 
-        return driver;
+        return this.driver;
     }
 
     public void initialize(){
         Browser browser = Browser.valueOf(cfg.browserName().toUpperCase());
 
         if (browser == Browser.FIREFOX) {
-            driver = createFirefoxDriver();
+            this.driver = createFirefoxDriver();
         } else {
-            driver = createChromeDriver(cfg);
+            this.driver = createChromeDriver(cfg);
         }
 
-        driver.get("http://" + cfg.homepageUrl());
-        driver.manage().window().setSize(new Dimension(20, 20));
+        this.driver.get("http://" + cfg.homepageUrl());
+        this.driver.manage().window().setSize(new Dimension(20, 20));
         System.out.println("initialized"); //TODO: Change with log4j logger
     }
 
     public void end(){
-        driver.quit();
+        this.driver.quit();
         System.out.println("ended"); //TODO: Change with log4j logger
     }
 
     public WebDriver get(){
-        return driver;
+        return this.driver;
     }
 }
