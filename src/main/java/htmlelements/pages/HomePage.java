@@ -10,9 +10,13 @@ public interface HomePage extends ExtendedWebPage {
     @FindBy("/html/body/div[4]/div")
     ExtendedMyWebElement privacySettingsModal();
 
-    @Description("Header button")
-    @FindBy("/html/body/div[2]/div[4]/a")
-    ExtendedMyWebElement headerButton();
+    @Description("Privacy settings modal accept button")
+    @FindBy("//*[@id=\"ember61\"]/div/div/button[1]")
+    ExtendedMyWebElement acceptPrivacyButton();
+
+    @Description("Header search button")
+    @FindBy("//*[@id=\"main-header\"]/div/div[1]/ul/li[2]/a")
+    ExtendedMyWebElement searchButton();
 
     @Description("Cart button")
     @FindBy("//*[@id=\"ember4\"]")
