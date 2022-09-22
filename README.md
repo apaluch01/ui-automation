@@ -50,7 +50,7 @@ Branching strategy is the same as we did in our first intro exercises - feature 
 
 2. Architecture:
 
-   - WebDriverFactory - Convenient class that wraps Selenium (see https://www.selenium.dev/documentation/en/introduction/on_test_automation/) WebDriver and provides it to steps and pages 
+   - configuration.WebDriverFactory - Convenient class that wraps Selenium (see https://www.selenium.dev/documentation/en/introduction/on_test_automation/) WebDriver and provides it to steps and pages 
 
    - WebDriverManager - io.github.bonigarcia for dynamical fetching of WebDriver .exe files (see https://github.com/bonigarcia/webdrivermanager)
 

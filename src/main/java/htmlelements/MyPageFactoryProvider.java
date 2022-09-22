@@ -1,5 +1,7 @@
 package htmlelements;
 
+import configuration.WebDriverFactory;
+
 public class MyPageFactoryProvider {
 
     private static MyPageFactory INSTANCE;

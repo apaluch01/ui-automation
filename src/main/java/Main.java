@@ -1,3 +1,5 @@
+import configuration.Configuration;
+import configuration.WebDriverFactory;
 import org.aeonbits.owner.ConfigFactory;
 
 public class Main {
