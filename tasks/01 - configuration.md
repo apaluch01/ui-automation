@@ -1,12 +1,12 @@
 # Integrate owner.aeonbits.org dependency and see maven checkstyle plugin
 
-Take a look at [Owner](http://owner.aeonbits.org/) documentation on how to create first configuration.Configuration classes.
+Take a look at [Owner](http://owner.aeonbits.org/) documentation on how to create first Configuration classes.
 
 * For our purposes create two .properties files - put them in resources folder: environment.properties - with one parameter (Follow Java way of naming - e.g. homepage.url) that contains url of www.ae.com, runConfiguration.properties - put parameters - browser.name , browser.width , browser.height, selenium.version
 
 * Implement two classes according to documentation provided above for managing these two properties files.
 
-* Create configuration.Configuration class that will have function of providing configuration objects from steps above in convenient way - you will use org.aeonbits.owner.ConfigFactory class inside.
+* Create Configuration class that will have function of providing configuration objects from steps above in convenient way - you will use org.aeonbits.owner.ConfigFactory class inside.
 
 * Test your implementation by creating temporary main class where you will print out values from properties files in console.
 

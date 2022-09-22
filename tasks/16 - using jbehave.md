@@ -22,7 +22,7 @@ You need to implement/override following methods:
 
 NOTE: You will put your story files in src.main.resources.stories folder.
 
-* `public org.jbehave.core.configuration.configuration.Configuration configuration()` - Here you should make configurations to JBehave framework - you should return `MostUsefulConfiguration()` object cofigured with methods:
+* `public org.jbehave.core.configuration.Configuration configuration()` - Here you should make configurations to JBehave framework - you should return `MostUsefulConfiguration()` object cofigured with methods:
 
   * useStoryLoader()
   * useStoryReporterBuilder()

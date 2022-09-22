@@ -1,4 +1,3 @@
-import configuration.Configuration;
 import org.aeonbits.owner.ConfigFactory;
 
 public class Main {
