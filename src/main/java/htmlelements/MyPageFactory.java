@@ -14,12 +14,12 @@ public class MyPageFactory {
 
     public <T extends WebPage> T on(Class<T> webpage) {
         WebPageFactory webPageFactory = new WebPageFactory();
-        webPageFactory.property(RetryStatement.TIMEOUT_KEY, String.valueOf(30)); // TODO: Create timeout as configurable property
+        webPageFactory.property(RetryStatement.TIMEOUT_KEY, String.valueOf(30));
         return webPageFactory.get(getDriver(), webpage);
     }
 
     public WebDriver getDriver() {
-        return driver; //TODO: Here you need to pass WebDriver instance from configuration.WebDriverFactory.get();
+        return driver; 
     }
 
 }
