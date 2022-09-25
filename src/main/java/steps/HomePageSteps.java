@@ -5,8 +5,6 @@ import htmlelements.MyPageFactoryProvider;
 import htmlelements.pages.HomePage;
 import org.openqa.selenium.WebDriver;
 
-import static io.qameta.htmlelements.matcher.DisplayedMatcher.displayed;
-
 public class HomePageSteps {
     private static MyPageFactory pageFactory;
     private WebDriver driver;
@@ -30,8 +28,8 @@ public class HomePageSteps {
         return new SearchSteps(driver);
     }
 
-    public SearchSteps clickCartButton() {
-        homePage().searchButton().click();
-        return new SearchSteps(driver);
+    public AccountSidebarSteps clickAccountButton() {
+        homePage().accountButton().click();
+        return new AccountSidebarSteps(driver);
     }
 }
