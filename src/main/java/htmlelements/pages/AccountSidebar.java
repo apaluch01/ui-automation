@@ -7,6 +7,6 @@ import io.qameta.htmlelements.annotation.FindBy;
 
 public interface AccountSidebar extends ExtendedWebPage {
     @Description("Sign in button")
-    @FindBy("//*[@id=\"modal-ember60\"]/div/div[2]/div[1]/button")
+    @FindBy("//button[contains(@class='qa-btn-signin')]")
     ExtendedMyWebElement signInButton();
 }

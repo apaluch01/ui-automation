@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface SearchResultsPage extends ExtendedWebPage {
     @Description("Results list")
-    @FindBy("//*[@id=\"main-content-focus\"]/div[2]/div[2]/div/div[2]/div[1]/*div")
+    @FindBy("//div[contains(@class='qa-search-results-list')]")
     List<ExtendedMyWebElement> resultsList();
 }

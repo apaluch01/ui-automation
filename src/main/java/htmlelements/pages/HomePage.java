@@ -7,22 +7,22 @@ import io.qameta.htmlelements.annotation.FindBy;
 
 public interface HomePage extends ExtendedWebPage {
     @Description("Privacy settings modal")
-    @FindBy("/html/body/div[4]/div")
+    @FindBy("//div[@class='bottom-container _bottom-container_128srs']")
     ExtendedMyWebElement privacySettingsModal();
 
     @Description("Privacy settings modal accept button")
-    @FindBy("//*[@id=\"ember61\"]/div/div/button[1]")
+    @FindBy("//button[@class='btn btn-primary qa-btn-accept-cookie   btn-block btn-sm qa-btn-accept-cookie _btn-accept-cookie_1eoaez']")
     ExtendedMyWebElement acceptPrivacyButton();
 
     @Description("Header search button")
-    @FindBy("//*[@id=\"main-header\"]/div/div[1]/ul/li[2]/a")
+    @FindBy("//a[@class='clickable qa-show-sidetray-search sidetray-search']")
     ExtendedMyWebElement searchButton();
 
     @Description("Header cart button")
-    @FindBy("//*[@id=\"ember4\"]")
+    @FindBy("//a[@class='ember-view bag-button underline-on-hover qa-tnav-bag-icon __fa246']")
     ExtendedMyWebElement cartButton();
 
     @Description("Header account button")
-    @FindBy("//*[@id=\"main-header\"]/div/div[1]/ul/li[3]/a")
+    @FindBy("//a[@class='clickable qa-show-sidetray-account sidetray-account']")
     ExtendedMyWebElement accountButton();
 }

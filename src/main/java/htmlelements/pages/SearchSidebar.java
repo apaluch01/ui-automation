@@ -7,10 +7,10 @@ import io.qameta.htmlelements.annotation.FindBy;
 
 public interface SearchSidebar extends ExtendedWebPage {
     @Description("Search input")
-    @FindBy("//*[@id=\"ember435-input\"]")
+    @FindBy("//input[@name='search']")
     ExtendedMyWebElement searchInput();
 
     @Description("Search submit button")
-    @FindBy("//*[@id=\"modal-ember433\"]/div/div[2]/form/button")
+    @FindBy("//button[@class='btn-link    btn search-btn']")
     ExtendedMyWebElement searchSubmitButton();
 }
