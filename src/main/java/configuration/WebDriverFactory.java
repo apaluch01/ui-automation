@@ -34,7 +34,7 @@ public class WebDriverFactory {
         }
 
         this.driver.get("http://" + cfg.homepageUrl());
-        this.driver.manage().window().setSize(new Dimension(20, 20));
+        this.driver.manage().window().setSize(new Dimension(1512, 759));
         System.out.println("initialized"); //TODO: Change with log4j logger
     }
 
