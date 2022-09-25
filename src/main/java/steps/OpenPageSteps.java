@@ -11,12 +11,9 @@ public class OpenPageSteps {
     private static MyPageFactory pageFactory;
     private WebDriver driver;
 
-    Configuration cfg = ConfigFactory.create(Configuration.class);
-
     public OpenPageSteps(WebDriver driver) {
         pageFactory = MyPageFactoryProvider.getInstance(driver);
         this.driver = driver;
-        System.out.println(driver);
     }
 
     private HomePage homePage() {
@@ -24,7 +21,6 @@ public class OpenPageSteps {
     }
 
     public HomePageSteps openHomepage() {
-        homePage().open(cfg.homepageUrl());
         return new HomePageSteps(driver);
     }
 }
