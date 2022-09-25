@@ -1,9 +1,7 @@
 package steps;
 
-import htmlelements.ExtendedMyWebElement;
 import htmlelements.MyPageFactory;
 import htmlelements.MyPageFactoryProvider;
-import htmlelements.pages.AccountSidebar;
 import htmlelements.pages.LoginSidebar;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
