@@ -7,11 +7,11 @@ import io.qameta.htmlelements.annotation.FindBy;
 
 public interface LoginSidebar extends ExtendedWebPage {
     @Description("Email input for login")
-    @FindBy("//input[@name='username')")
+    @FindBy("//input[@class='ember-text-field ember-view form-control form-control form-input-username')")
     ExtendedMyWebElement emailInput();
 
     @Description("Password input for login")
-    @FindBy("//input[@name='password']")
+    @FindBy("//input[@class='ember-text-field ember-view form-control form-control form-input-password']")
     ExtendedMyWebElement passwordInput();
 
     @Description("Sign in button")

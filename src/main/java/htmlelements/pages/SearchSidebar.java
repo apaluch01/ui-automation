@@ -7,7 +7,7 @@ import io.qameta.htmlelements.annotation.FindBy;
 
 public interface SearchSidebar extends ExtendedWebPage {
     @Description("Search input")
-    @FindBy("//input[@name='search']")
+    @FindBy("//input[@class='ember-text-field ember-view form-control form-control form-input-search']")
     ExtendedMyWebElement searchInput();
 
     @Description("Search submit button")
