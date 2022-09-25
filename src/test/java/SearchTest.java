@@ -8,6 +8,5 @@ public class SearchTest extends BaseTest {
         new OpenPageSteps(driver.get()).openHomepage().acceptPrivacyModal().
                 clickSearchButton().inputSearchTerm("0422-2452").
                 clickSearchIcon().verifyNumberOfProductIsDisplayed(2);
-        System.out.println("end");
     }
 }

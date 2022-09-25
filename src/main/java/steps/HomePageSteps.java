@@ -21,11 +21,16 @@ public class HomePageSteps {
     }
 
     public HomePageSteps acceptPrivacyModal() {
-        homePage().acceptPrivacyButton().waitUntil(displayed()).click();
+        homePage().acceptPrivacyButton().click();
         return this;
     }
 
     public SearchSteps clickSearchButton() {
+        homePage().searchButton().click();
+        return new SearchSteps(driver);
+    }
+
+    public SearchSteps clickCartButton() {
         homePage().searchButton().click();
         return new SearchSteps(driver);
     }

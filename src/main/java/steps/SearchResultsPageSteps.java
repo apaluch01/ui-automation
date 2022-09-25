@@ -20,7 +20,7 @@ public class SearchResultsPageSteps {
     }
 
     public SearchResultsPageSteps verifyNumberOfProductIsDisplayed(int numProducts) {
-        Assert.assertEquals(searchResultsPage().resultsList().size(), numProducts);
+        Assert.assertEquals(numProducts, searchResultsPage().resultsList().size());
         return this;
     }
 }

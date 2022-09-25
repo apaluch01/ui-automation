@@ -7,12 +7,15 @@ import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class WebDriverFactory {
     private WebDriver driver;
     Configuration cfg = ConfigFactory.create(Configuration.class);
     private WebDriver createChromeDriver(Configuration cfg) {
         ChromeDriverManager.chromedriver().browserVersion(cfg.seleniumVersion()).setup();
         this.driver = ChromeDriverManager.chromedriver().create();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         return this.driver;
     }
@@ -20,6 +23,7 @@ public class WebDriverFactory {
     private WebDriver createFirefoxDriver() {
         FirefoxDriverManager.firefoxdriver().setup();
         this.driver = FirefoxDriverManager.firefoxdriver().create();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         return this.driver;
     }
