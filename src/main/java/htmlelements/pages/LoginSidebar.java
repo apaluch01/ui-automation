@@ -29,4 +29,8 @@ public interface LoginSidebar extends ExtendedWebPage {
     @Description("Login password error message")
     @FindBy("//span[@class='un-error-icon']")
     ExtendedMyWebElement passwordError();
+
+    @Description("Sign out button")
+    @FindBy("//a[@class='btn btn-secondary    btn-sign-out']")
+    ExtendedMyWebElement signOutButton();
 }

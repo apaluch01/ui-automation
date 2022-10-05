@@ -34,9 +34,22 @@ public class LoginSidebarSteps {
         return this;
     }
 
-    public LoginSidebarSteps checkErrors() {
+    public LoginSidebarSteps checkLogin() {
+        Assert.assertNotNull(loginSidebar().signOutButton());
+        return this;
+    }
+
+    public LoginSidebarSteps checkLoginError() {
         Assert.assertNotNull(loginSidebar().loginError());
+        return this;
+    }
+
+    public LoginSidebarSteps checkEmailError() {
         Assert.assertNotNull(loginSidebar().emailError());
+        return this;
+    }
+
+    public LoginSidebarSteps checkPasswordError() {
         Assert.assertNotNull(loginSidebar().passwordError());
         return this;
     }
