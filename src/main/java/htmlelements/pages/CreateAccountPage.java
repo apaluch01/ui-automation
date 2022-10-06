@@ -24,7 +24,7 @@ public interface CreateAccountPage extends ExtendedWebPage {
 
     @Description("Password confirmation input field")
     @FindBy("//input[@name='confirm_password']")
-    ExtendedMyWebElement confirmPassword();
+    ExtendedMyWebElement confirmPasswordInput();
 
     @Description("Zip code input field")
     @FindBy("//input[@name='postalCode']")

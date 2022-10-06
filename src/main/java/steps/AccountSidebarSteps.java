@@ -22,4 +22,9 @@ public class AccountSidebarSteps {
         accountSidebar().signInButton().click();
         return new LoginSidebarSteps(driver);
     }
+
+    public CreateAccountPageSteps openAccountCreationPage() {
+        accountSidebar().createAccountButton().click();
+        return new CreateAccountPageSteps(driver);
+    }
 }
