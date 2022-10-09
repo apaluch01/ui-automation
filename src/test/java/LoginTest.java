@@ -1,6 +1,8 @@
 import org.junit.Test;
 import steps.OpenPageSteps;
 
+import static context.ContextConstants.*;
+
 public class LoginTest extends BaseTest{
     @Test
     public void noInputShouldDisplayError() {
@@ -11,7 +13,7 @@ public class LoginTest extends BaseTest{
     @Test
     public void validInputShouldLogIn() {
         new OpenPageSteps(driver.get()).openHomepage().acceptPrivacyModal().
-                clickAccountButton().openLogInSidebar().inputEmail("jzlbrgomdsmczytskf@tmmcv.net").inputPassword("G3v2c89GHc4wKn9").
-                logIn().checkLogin();
+                clickAccountButton().openLogInSidebar().inputEmail((String) constants.data.get(MAIL))
+                .inputPassword((String) constants.get(PASSWORD)).logIn().checkLogin();
     }
 }
