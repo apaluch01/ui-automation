@@ -1,10 +1,8 @@
 package steps;
 
-import configuration.Configuration;
 import htmlelements.MyPageFactory;
 import htmlelements.MyPageFactoryProvider;
 import htmlelements.pages.HomePage;
-import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 
 public class OpenPageSteps {
