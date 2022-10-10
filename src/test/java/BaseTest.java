@@ -7,7 +7,7 @@ import utils.RandomUtils;
 import static context.ContextConstants.*;
 
 public class BaseTest {
-    WebDriverFactory driver = new WebDriverFactory();
+    static WebDriverFactory driver = new WebDriverFactory();
 
     ScenarioContext constants = ScenarioContext.getInstance();
 
