@@ -15,4 +15,8 @@ public class MyPageFactoryProvider {
         return INSTANCE;
     }
 
+    public static void deleteInstance(WebDriver driver){
+        INSTANCE=new MyPageFactory(driver);
+    }
+
 }

@@ -10,6 +10,7 @@ public class OpenPageSteps {
     private WebDriver driver;
 
     public OpenPageSteps(WebDriver driver) {
+        MyPageFactoryProvider.deleteInstance(driver);
         pageFactory = MyPageFactoryProvider.getInstance(driver);
         this.driver = driver;
     }
