@@ -3,6 +3,7 @@ package steps;
 import htmlelements.MyPageFactory;
 import htmlelements.MyPageFactoryProvider;
 import htmlelements.pages.HomePage;
+import org.jbehave.core.annotations.Given;
 import org.openqa.selenium.WebDriver;
 
 public class OpenPageSteps {
@@ -19,6 +20,7 @@ public class OpenPageSteps {
         return pageFactory.on(HomePage.class);
     }
 
+    @Given("I open the homepage")
     public HomePageSteps openHomepage() {
         return new HomePageSteps(driver);
     }

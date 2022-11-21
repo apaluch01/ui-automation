@@ -3,6 +3,8 @@ package steps;
 import htmlelements.MyPageFactory;
 import htmlelements.MyPageFactoryProvider;
 import htmlelements.pages.CreateAccountPage;
+import org.jbehave.core.annotations.Named;
+import org.jbehave.core.annotations.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -20,53 +22,63 @@ public class CreateAccountPageSteps {
         return pageFactory.on(CreateAccountPage.class);
     }
 
-    public CreateAccountPageSteps inputEmail(String mail) {
+    @When("I input $field as mail for new account")
+    public CreateAccountPageSteps inputEmail(@Named("field") String mail) {
         createAccountPage().emailInput().sendKeys(mail);
         return this;
     }
 
-    public CreateAccountPageSteps inputFirstName(String firstName) {
+    @When("I input $field as first name")
+    public CreateAccountPageSteps inputFirstName(@Named("field") String firstName) {
         createAccountPage().firstNameInput().sendKeys(firstName);
         return this;
     }
 
-    public CreateAccountPageSteps inputLastName(String lastName) {
+    @When("I input $field as last name")
+    public CreateAccountPageSteps inputLastName(@Named("field") String lastName) {
         createAccountPage().lastNameInput().sendKeys(lastName);
         return this;
     }
 
-    public CreateAccountPageSteps inputPassword(String password) {
+    @When("I input $field as password for new account")
+    public CreateAccountPageSteps inputPassword(@Named("field") String password) {
         createAccountPage().passwordInput().sendKeys(password);
         return this;
     }
 
-    public CreateAccountPageSteps confirmPassword(String password) {
+    @When("I confirm $field as password for new account")
+    public CreateAccountPageSteps confirmPassword( @Named("field")String password) {
         createAccountPage().confirmPasswordInput().sendKeys(password);
         return this;
     }
 
-    public CreateAccountPageSteps inputZipCode(String zipCode) {
+    @When("I input $field as zip code")
+    public CreateAccountPageSteps inputZipCode(@Named("field") String zipCode) {
         createAccountPage().zipCodeInput().sendKeys(zipCode);
         return this;
     }
 
-    public CreateAccountPageSteps chooseMonth(String month) {
+    @When("I input $field as month")
+    public CreateAccountPageSteps chooseMonth(@Named("field") String month) {
         Select monthSelect = new Select(driver.findElement(By.name("month")));
         monthSelect.selectByVisibleText(month);
         return this;
     }
 
-    public CreateAccountPageSteps chooseDay(String day) {
+    @When("I input $field as day")
+    public CreateAccountPageSteps chooseDay(@Named("field") String day) {
         Select daySelect = new Select(driver.findElement(By.name("day")));
         daySelect.selectByVisibleText(day);
         return this;
     }
 
+    @When("I accept terms")
     public CreateAccountPageSteps acceptTerms() {
         createAccountPage().acceptTerms().click();
         return this;
     }
 
+    @When("I click create account button")
     public CreateAccountPageSteps createAccount() {
         createAccountPage().createAccountConfirm().click();
         return this;
