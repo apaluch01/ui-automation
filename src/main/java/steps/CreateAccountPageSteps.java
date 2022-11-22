@@ -5,6 +5,8 @@ import htmlelements.MyPageFactoryProvider;
 import htmlelements.pages.CreateAccountPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class CreateAccountPageSteps {
@@ -63,7 +65,8 @@ public class CreateAccountPageSteps {
     }
 
     public CreateAccountPageSteps acceptTerms() {
-        createAccountPage().acceptTerms().click();
+        WebElement terms = driver.findElement(By.cssSelector("div[data-test-checkbox=acceptTerms] label"));
+        terms.click();
         return this;
     }
 

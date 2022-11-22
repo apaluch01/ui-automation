@@ -31,10 +31,10 @@ public class BaseTest {
     public void initializeDriver() {
         RandomUtils randomUtils = new RandomUtils("axbycz.com");
 
-        //data.put(MAIL, randomUtils.mail);
-        //data.put(PASSWORD, "123abc456");
-        constants.data.put(MAIL, "jzlbrgomdsmczytskf@tmmcv.net");
-        constants.data.put(PASSWORD, "G3v2c89GHc4wKn9");
+        constants.data.put(MAIL, randomUtils.mail);
+        constants.data.put(PASSWORD, "123abc456");
+        //constants.data.put(MAIL, "jzlbrgomdsmczytskf@tmmcv.net");
+        //constants.data.put(PASSWORD, "G3v2c89GHc4wKn9"); already used data, proper for login tests
 
         driver.initialize();
     }

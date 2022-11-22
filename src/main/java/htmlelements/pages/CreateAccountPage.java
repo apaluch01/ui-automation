@@ -7,7 +7,7 @@ import io.qameta.htmlelements.annotation.FindBy;
 
 public interface CreateAccountPage extends ExtendedWebPage {
     @Description("Email input field")
-    @FindBy("//input[@name='login']")
+    @FindBy("//input[@placeholder='Email']")
     ExtendedMyWebElement emailInput();
 
     @Description("First name input field")
@@ -19,7 +19,7 @@ public interface CreateAccountPage extends ExtendedWebPage {
     ExtendedMyWebElement lastNameInput();
 
     @Description("Password input field")
-    @FindBy("//input[@name='password']")
+    @FindBy("//input[@placeholder='Password']")
     ExtendedMyWebElement passwordInput();
 
     @Description("Password confirmation input field")
