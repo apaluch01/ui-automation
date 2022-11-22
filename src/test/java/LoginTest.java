@@ -13,7 +13,7 @@ public class LoginTest extends BaseTest{
     @Test
     public void validInputShouldLogIn() {
         new OpenPageSteps(driver.get()).openHomepage().acceptPrivacyModal().
-                clickAccountButton().openLogInSidebar().inputEmail((String) constants.data.get(MAIL))
+                clickAccountButton().openLogInSidebar().inputEmail((String) constants.get(MAIL))
                 .inputPassword((String) constants.get(PASSWORD)).logIn().checkLogin();
     }
 }

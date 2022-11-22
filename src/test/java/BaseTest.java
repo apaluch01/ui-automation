@@ -1,5 +1,4 @@
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import configuration.WebDriverFactory;
 import context.ScenarioContext;
 import org.junit.After;
@@ -7,7 +6,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import utils.Account;
 import utils.RandomUtils;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;

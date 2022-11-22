@@ -8,7 +8,7 @@ public class ScenarioContext {
     private static ScenarioContext scenarioContext;
 
     private ScenarioContext() {
-        this.data = new HashMap<>();
+        data = new HashMap<>();
     }
 
     public static ScenarioContext getInstance() {
@@ -18,7 +18,7 @@ public class ScenarioContext {
         return scenarioContext;
     }
 
-    public Object get(String key) { //TODO: change to T type return like: public T get(String key, Class clazz)
+    public Object get(String key) {
         return data.get(key);
     }
 
