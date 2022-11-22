@@ -1,5 +1,4 @@
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import configuration.WebDriverFactory;
 import context.ScenarioContext;
 import org.junit.After;
@@ -16,7 +15,6 @@ import static context.ContextConstants.*;
 
 public class BaseTest {
     static WebDriverFactory driver = new WebDriverFactory();
-
     ScenarioContext constants = ScenarioContext.getInstance();
     static Account accountData;
 
@@ -31,10 +29,10 @@ public class BaseTest {
     public void initializeDriver() {
         RandomUtils randomUtils = new RandomUtils("axbycz.com");
 
-        //data.put(MAIL, randomUtils.mail);
-        //data.put(PASSWORD, "123abc456");
-        constants.data.put(MAIL, "jzlbrgomdsmczytskf@tmmcv.net");
-        constants.data.put(PASSWORD, "G3v2c89GHc4wKn9");
+        constants.data.put(MAIL, randomUtils.mail);
+        constants.data.put(PASSWORD, "123abc456");
+        //constants.data.put(MAIL, "jzlbrgomdsmczytskf@tmmcv.net");
+        //constants.data.put(PASSWORD, "G3v2c89GHc4wKn9"); already used data, proper for login tests
 
         driver.initialize();
     }
