@@ -20,4 +20,7 @@ public interface Configuration extends Config {
 
     @Key("homepage.url")
     String homepageUrl();
+
+    @Key("meta.filters")
+    String metaFilters();
 }

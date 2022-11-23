@@ -1,6 +1,8 @@
 import com.google.gson.Gson;
 import configuration.WebDriverFactory;
 import context.ScenarioContext;
+import org.jbehave.core.annotations.Given;
+import org.jbehave.core.annotations.Then;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -18,6 +20,7 @@ public class BaseTest {
     ScenarioContext constants = ScenarioContext.getInstance();
     static Account accountData;
 
+    @Given("I load account data")
     @BeforeClass
     public static void loadNewAccountData() throws IOException {
         String file = "src/main/resources/accounts.json";
@@ -25,6 +28,7 @@ public class BaseTest {
         accountData = new Gson().fromJson(json, Account.class);
     }
 
+    @Given("I initialize driver")
     @Before
     public void initializeDriver() {
         RandomUtils randomUtils = new RandomUtils("axbycz.com");
@@ -37,6 +41,7 @@ public class BaseTest {
         driver.initialize();
     }
 
+    @Then("Driver quits")
     @After
     public void quitDriver() {
         driver.end();
