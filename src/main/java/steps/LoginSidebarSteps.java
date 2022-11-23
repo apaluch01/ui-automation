@@ -46,19 +46,19 @@ public class LoginSidebarSteps {
         return this;
     }
 
-    @Then("There is no login error")
+    @Then("There is a login error")
     public LoginSidebarSteps checkLoginError() {
         Assert.assertNotNull(loginSidebar().loginError());
         return this;
     }
 
-    @Then("There is no email error")
+    @Then("There is an email error")
     public LoginSidebarSteps checkEmailError() {
         Assert.assertNotNull(loginSidebar().emailError());
         return this;
     }
 
-    @Then("There is no password error")
+    @Then("There is a password error")
     public LoginSidebarSteps checkPasswordError() {
         Assert.assertNotNull(loginSidebar().passwordError());
         return this;
