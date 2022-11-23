@@ -1,8 +1,13 @@
 package framework;
 
+import configuration.WebDriverFactory;
 import org.aeonbits.owner.ConfigFactory;
+import org.jbehave.core.ConfigurableEmbedder;
+import org.jbehave.core.annotations.Configure;
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.MostUsefulConfiguration;
+import org.jbehave.core.embedder.Embedder;
+import org.jbehave.core.io.CodeLocations;
 import org.jbehave.core.io.LoadFromClasspath;
 import org.jbehave.core.io.StoryFinder;
 import org.jbehave.core.junit.JUnitStories;
@@ -10,36 +15,43 @@ import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
 import org.junit.Test;
+import org.openqa.selenium.chrome.ChromeDriver;
+import steps.OpenPageSteps;
+import steps.TestSteps;
+
 import java.util.List;
 
 import static java.util.Arrays.asList;
 import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 
 public class JBehaveStoriesRunner extends JUnitStories {
-    configuration.Configuration cfg = ConfigFactory.create(configuration.Configuration.class);
+    configuration.Configuration cfgOwn = ConfigFactory.create(configuration.Configuration.class);
+    Embedder embedder;
 
-    @Override
+    WebDriverFactory driver = new WebDriverFactory();
+
     protected List<String> storyPaths() {
-        configuredEmbedder().useMetaFilters(asList(cfg.metaFilters().split(",")));
+        configuredEmbedder().useMetaFilters(asList(cfgOwn.metaFilters().split(",")));
 
-        return new StoryFinder().findPaths(
-                codeLocationFromClass(this.getClass()).getFile(), "src/main/resources/stories/*.story",
-                "");
+        return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()), "**/stories/*.story", "");
     }
 
     public Configuration configuration(){
         return new MostUsefulConfiguration().
                 useStoryLoader(new LoadFromClasspath(this.getClass())).
-                useStoryReporterBuilder(new StoryReporterBuilder());
+                useStoryReporterBuilder(new StoryReporterBuilder().withCodeLocation(CodeLocations.codeLocationFromClass(JBehaveStoriesRunner.class)));
     }
 
     public InjectableStepsFactory stepsFactory(){
-        return new InstanceStepsFactory(configuration());
+        return new InstanceStepsFactory(configuration(), new TestSteps());
     }
 
     @Test
-    public void run(){
-        System.out.println(storyPaths());
-        configuredEmbedder().runStoriesAsPaths(storyPaths());
+    @Override
+    public void run() {
+        embedder = configuredEmbedder();
+        embedder.configuration();
+        embedder.useCandidateSteps(stepsFactory().createCandidateSteps());
+        embedder.runStoriesAsPaths(storyPaths());
     }
 }
