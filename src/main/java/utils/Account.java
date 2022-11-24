@@ -1,9 +1,8 @@
 package utils;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter @Setter
+@Data
 public class Account {
     private String firstName;
     private String lastName;

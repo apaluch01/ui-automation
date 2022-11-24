@@ -6,7 +6,7 @@ public class SearchTest extends BaseTest {
     @Test
     public void productNumberShouldBeAsExpected() {
         new OpenPageSteps(driver.get()).openHomepage().acceptPrivacyModal().
-                clickSearchButton().inputSearchTerm("0422-2452").
-                clickSearchIcon().verifyNumberOfProductIsDisplayed(2);
+                clickSearchButton().inputSearchTerm("cat").
+                clickSearchIcon().scrollDownForAllResults().verifyNumberOfProductIsDisplayed(9);
     }
 }

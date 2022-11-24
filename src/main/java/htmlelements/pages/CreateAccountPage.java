@@ -43,6 +43,6 @@ public interface CreateAccountPage extends ExtendedWebPage {
     ExtendedMyWebElement acceptTerms();
 
     @Description("Final create account button")
-    @FindBy("//button[@class='btn btn-primary qa-btn-register  btn-block']")
+    @FindBy("//button[@name='register']")
     ExtendedMyWebElement createAccountConfirm();
 }
