@@ -39,12 +39,12 @@ public class WebDriverFactory {
 
         this.driver.get("http://" + cfg.homepageUrl());
         this.driver.manage().window().setSize(new Dimension(cfg.browserWidth(), cfg.browserHeight()));
-        System.out.println("initialized"); //TODO: Change with log4j logger
+        System.out.println("initialized");
     }
 
     public void end(){
         this.driver.quit();
-        System.out.println("ended"); //TODO: Change with log4j logger
+        System.out.println("ended");
     }
 
     public WebDriver get(){

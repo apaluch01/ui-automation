@@ -14,7 +14,7 @@ import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
 import org.junit.Test;
-import steps.TestSteps;
+import steps.*;
 
 import java.util.List;
 
@@ -42,7 +42,7 @@ public class JBehaveStoriesRunner extends JUnitStories {
     }
 
     public InjectableStepsFactory stepsFactory(){
-        return new InstanceStepsFactory(configuration(), new TestSteps());
+        return new InstanceStepsFactory(configuration(), new DriverSteps(), new OpenPageSteps(driver.get()), new HomePageSteps(driver.get()));
     }
 
     @Test
