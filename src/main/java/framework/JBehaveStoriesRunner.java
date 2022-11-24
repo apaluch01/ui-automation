@@ -30,7 +30,7 @@ public class JBehaveStoriesRunner extends JUnitStories {
     protected List<String> storyPaths() {
         embedder.useMetaFilters(asList(cfgOwn.metaFilters().split(",")));
 
-        return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()), "**/stories/*.story", "");
+        return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()), cfgOwn.storiesToRun(), "");
     }
 
     public Configuration configuration(){
@@ -42,7 +42,7 @@ public class JBehaveStoriesRunner extends JUnitStories {
     }
 
     public InjectableStepsFactory stepsFactory(){
-        return new InstanceStepsFactory(configuration(), new DriverSteps(), new OpenPageSteps(driver.get()), new HomePageSteps(driver.get()));
+        return new InstanceStepsFactory(configuration(), new DriverSteps());
     }
 
     @Test

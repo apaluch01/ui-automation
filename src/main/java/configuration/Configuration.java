@@ -23,4 +23,7 @@ public interface Configuration extends Config {
 
     @Key("meta.filters")
     String metaFilters();
+
+    @Key("stories.to.run")
+    String storiesToRun();
 }
