@@ -1,4 +1,4 @@
-# Create WebDriverFactory.class implementation
+# Create configuration.WebDriverFactory.class implementation
 
 Purpose of this class is to provide convenient methods for configurable WebDriver initialization.
 
