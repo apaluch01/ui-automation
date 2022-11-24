@@ -1,7 +1,6 @@
 package steps;
 
 import htmlelements.MyPageFactory;
-import htmlelements.MyPageFactoryProvider;
 import htmlelements.pages.SearchResultsPage;
 import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
@@ -13,7 +12,7 @@ public class SearchResultsPageSteps {
     private WebDriver driver;
 
     public SearchResultsPageSteps(WebDriver driver) {
-        pageFactory = MyPageFactoryProvider.getInstance(driver);
+        pageFactory = new MyPageFactory(driver);
         this.driver = driver;
     }
 

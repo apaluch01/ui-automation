@@ -1,7 +1,6 @@
 package steps;
 
 import htmlelements.MyPageFactory;
-import htmlelements.MyPageFactoryProvider;
 import htmlelements.pages.LoginSidebar;
 import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
@@ -14,7 +13,7 @@ public class LoginSidebarSteps {
     private WebDriver driver;
 
     public LoginSidebarSteps(WebDriver driver) {
-        pageFactory = MyPageFactoryProvider.getInstance(driver);
+        pageFactory = new MyPageFactory(driver);
         this.driver = driver;
     }
 

@@ -1,7 +1,6 @@
 package steps;
 
 import htmlelements.MyPageFactory;
-import htmlelements.MyPageFactoryProvider;
 import htmlelements.pages.CreateAccountPage;
 import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.When;
@@ -15,7 +14,7 @@ public class CreateAccountPageSteps {
     private WebDriver driver;
 
     public CreateAccountPageSteps(WebDriver driver) {
-        pageFactory = MyPageFactoryProvider.getInstance(driver);
+        pageFactory = new MyPageFactory(driver);
         this.driver = driver;
     }
 

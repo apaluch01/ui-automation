@@ -1,7 +1,6 @@
 package steps;
 
 import htmlelements.MyPageFactory;
-import htmlelements.MyPageFactoryProvider;
 import htmlelements.pages.HomePage;
 import org.jbehave.core.annotations.When;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +10,7 @@ public class HomePageSteps {
     private WebDriver driver;
 
     public HomePageSteps(WebDriver driver) {
-        pageFactory = MyPageFactoryProvider.getInstance(driver);
+        pageFactory = new MyPageFactory(driver);
         this.driver = driver;
     }
 
