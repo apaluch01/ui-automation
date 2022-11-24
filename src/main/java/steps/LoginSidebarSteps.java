@@ -1,7 +1,6 @@
 package steps;
 
 import htmlelements.MyPageFactory;
-import htmlelements.MyPageFactoryProvider;
 import htmlelements.pages.LoginSidebar;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +10,7 @@ public class LoginSidebarSteps {
     private WebDriver driver;
 
     public LoginSidebarSteps(WebDriver driver) {
-        pageFactory = MyPageFactoryProvider.getInstance(driver);
+        pageFactory = new MyPageFactory(driver);
         this.driver = driver;
     }
 

@@ -1,7 +1,6 @@
 package steps;
 
 import htmlelements.MyPageFactory;
-import htmlelements.MyPageFactoryProvider;
 import htmlelements.pages.HomePage;
 import org.openqa.selenium.WebDriver;
 
@@ -10,8 +9,8 @@ public class OpenPageSteps {
     private WebDriver driver;
 
     public OpenPageSteps(WebDriver driver) {
-        MyPageFactoryProvider.deleteInstance(driver);
-        pageFactory = MyPageFactoryProvider.getInstance(driver);
+        //MyPageFactoryProvider.deleteInstance(driver);
+        pageFactory = new MyPageFactory(driver);
         this.driver = driver;
     }
 

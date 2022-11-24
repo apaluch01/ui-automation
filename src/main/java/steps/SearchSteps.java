@@ -1,7 +1,6 @@
 package steps;
 
 import htmlelements.MyPageFactory;
-import htmlelements.MyPageFactoryProvider;
 import htmlelements.pages.SearchSidebar;
 import org.openqa.selenium.WebDriver;
 
@@ -10,7 +9,7 @@ public class SearchSteps {
     private WebDriver driver;
 
     public SearchSteps(WebDriver driver) {
-        pageFactory = MyPageFactoryProvider.getInstance(driver);
+        pageFactory = new MyPageFactory(driver);
         this.driver = driver;
     }
 
