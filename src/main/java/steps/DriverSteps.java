@@ -5,7 +5,7 @@ import configuration.WebDriverFactory;
 import context.ScenarioContext;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
-import org.junit.After;
+import org.openqa.selenium.WebDriver;
 import utils.Account;
 import utils.RandomUtils;
 
@@ -28,8 +28,7 @@ public class DriverSteps {
         accountData = new Gson().fromJson(json, Account.class);
     }
 
-    @Given("I initialize driver")
-    public void initializeDriver() {
+    public WebDriver initializeDriver() {
         RandomUtils randomUtils = new RandomUtils("axbycz.com");
 
         constants.data.put(MAIL, randomUtils.mail);
@@ -38,6 +37,7 @@ public class DriverSteps {
         //constants.data.put(PASSWORD, "G3v2c89GHc4wKn9"); already used data, proper for login tests
 
         driver.initialize();
+        return driver.get();
     }
 
     @Then("Driver quits")

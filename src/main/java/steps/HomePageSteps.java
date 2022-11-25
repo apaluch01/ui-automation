@@ -20,9 +20,7 @@ public class HomePageSteps {
 
     @When("I accept privacy modal")
     public HomePageSteps acceptPrivacyModal() {
-        System.out.println("1");
         homePage().acceptPrivacyButton().click();
-        System.out.println("2");
         return this;
     }
 

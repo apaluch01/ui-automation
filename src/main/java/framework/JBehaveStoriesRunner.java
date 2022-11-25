@@ -14,6 +14,7 @@ import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 import steps.*;
 
 import java.util.List;
@@ -24,8 +25,6 @@ import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 public class JBehaveStoriesRunner extends JUnitStories {
     configuration.Configuration cfgOwn = ConfigFactory.create(configuration.Configuration.class);
     Embedder embedder;
-
-    WebDriverFactory driver = new WebDriverFactory();
 
     protected List<String> storyPaths() {
         embedder.useMetaFilters(asList(cfgOwn.metaFilters().split(",")));
@@ -42,7 +41,9 @@ public class JBehaveStoriesRunner extends JUnitStories {
     }
 
     public InjectableStepsFactory stepsFactory(){
-        return new InstanceStepsFactory(configuration(), new DriverSteps());
+        DriverSteps driverSteps = new DriverSteps();
+        WebDriver driver = driverSteps.initializeDriver();
+        return new InstanceStepsFactory(configuration(), driverSteps, new OpenPageSteps(driver),  new HomePageSteps(driver));
     }
 
     @Test
