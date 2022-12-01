@@ -1,6 +1,5 @@
 package framework;
 
-import configuration.WebDriverFactory;
 import org.aeonbits.owner.ConfigFactory;
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.MostUsefulConfiguration;
@@ -43,15 +42,14 @@ public class JBehaveStoriesRunner extends JUnitStories {
     public InjectableStepsFactory stepsFactory(){
         DriverSteps driverSteps = new DriverSteps();
         WebDriver driver = driverSteps.initializeDriver();
-        return new InstanceStepsFactory(configuration(), driverSteps, new OpenPageSteps(driver),  new HomePageSteps(driver));
+        return new InstanceStepsFactory(configuration(), driverSteps, new OpenPageSteps(driver),
+                new HomePageSteps(driver), new AccountSidebarSteps(driver), new LoginSidebarSteps(driver));
     }
 
     @Test
     @Override
     public void run() {
         embedder = configuredEmbedder();
-        embedder.configuration();
-        embedder.useCandidateSteps(stepsFactory().createCandidateSteps());
         embedder.runStoriesAsPaths(storyPaths());
     }
 }
