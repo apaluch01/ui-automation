@@ -60,7 +60,7 @@
                         <phase>test</phase>
                         <configuration>
                             <includes>
-                                <include>**/JBehaveStoriesRunner.java</include>
+                                <include>${runSuite}</include>
                             </includes>
                             <ignoreFailureInStories>true</ignoreFailureInStories>
                             <ignoreFailureInView>false</ignoreFailureInView>
@@ -119,14 +119,9 @@
             <version>3.18.0</version>
         </dependency>
         <dependency>
-            <groupId>org.jbehave</groupId>
-            <artifactId>jbehave-core</artifactId>
-            <version>4.7</version>
-        </dependency>
-        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>RELEASE</version>
+            <version>5.9.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>

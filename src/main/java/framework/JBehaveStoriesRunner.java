@@ -21,14 +21,18 @@ import java.util.List;
 import static java.util.Arrays.asList;
 import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 
-public class JBehaveStoriesRunner extends JUnitStories {
+public abstract class JBehaveStoriesRunner extends JUnitStories {
     configuration.Configuration cfgOwn = ConfigFactory.create(configuration.Configuration.class);
     Embedder embedder;
+
+    protected abstract List<String> includeStories();
+
+    protected abstract List<String> excludeStories();
 
     protected List<String> storyPaths() {
         embedder.useMetaFilters(asList(cfgOwn.metaFilters().split(",")));
 
-        return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()), cfgOwn.storiesToRun(), "");
+        return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()), includeStories(), excludeStories());
     }
 
     public Configuration configuration(){
@@ -43,11 +47,11 @@ public class JBehaveStoriesRunner extends JUnitStories {
         DriverSteps driverSteps = new DriverSteps();
         WebDriver driver = driverSteps.initializeDriver();
         return new InstanceStepsFactory(configuration(), driverSteps, new OpenPageSteps(driver),
-                new HomePageSteps(driver), new AccountSidebarSteps(driver), new LoginSidebarSteps(driver));
+                new HomePageSteps(driver), new AccountSidebarSteps(driver), new LoginSidebarSteps(driver),
+                new CreateAccountPageSteps(driver), new SearchSteps(driver), new SearchResultsPageSteps(driver));
     }
 
     @Test
-    @Override
     public void run() {
         embedder = configuredEmbedder();
         embedder.runStoriesAsPaths(storyPaths());
