@@ -1,11 +1,25 @@
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
+import framework.JBehaveStoriesRunner;
 
-@RunWith(Suite.class)
+import java.util.ArrayList;
+import java.util.List;
 
-@Suite.SuiteClasses({
-        LoginTest.class
-})
+public class SmokeSuite extends JBehaveStoriesRunner {
+    @Override
+    protected List<String> includeStories() {
+        List<String> include = new ArrayList<>();
+        include.add("**/stories/Login.story");
+        return include;
+    }
 
-public class SmokeSuite {
+    @Override
+    protected List<String> excludeStories() {
+        List<String> exclude = new ArrayList<>();
+        return exclude;
+    }
+
+    @Override
+    public void run() {
+        super.run();
+    }
+
 }
