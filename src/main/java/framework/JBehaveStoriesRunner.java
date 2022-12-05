@@ -32,7 +32,7 @@ public abstract class JBehaveStoriesRunner extends JUnitStories {
     protected List<String> storyPaths() {
         embedder.useMetaFilters(asList(cfgOwn.metaFilters().split(",")));
 
-        return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()), includeStories(), excludeStories());
+        return new StoryFinder().findPaths(codeLocationFromClass(JBehaveStoriesRunner.class), includeStories(), excludeStories());
     }
 
     public Configuration configuration(){

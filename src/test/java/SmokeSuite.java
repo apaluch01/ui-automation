@@ -21,5 +21,4 @@ public class SmokeSuite extends JBehaveStoriesRunner {
     public void run() {
         super.run();
     }
-
 }
